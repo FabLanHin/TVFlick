@@ -13,8 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('/movies', 'App\Http\Controllers\MovieController');
+Route::get('/', [
+	'uses' => 'App\Http\Controllers\HomeController@mainSite',
+	'as' => 'index'
+]);
 
-Route::resource('/series', 'App\Http\Controllers\SerieController');
+Auth::routes();
 
-Route::resource('/seasons', 'App\Http\Controllers\SeasonController');
+
+Route::group(['middleware' => 'auth'], function() {
+
+	Route::resource('/movies', 'App\Http\Controllers\MovieController');
+
+	Route::resource('/series', 'App\Http\Controllers\SerieController');
+
+	Route::get('/home', [
+		'uses' => 'App\Http\Controllers\HomeController@index',
+		'as' => 'home'
+	]); 
+});

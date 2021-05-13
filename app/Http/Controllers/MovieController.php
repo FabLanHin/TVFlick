@@ -2,22 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Models\Movie;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
+
     public function index()
     {
-        $movies = Movie::all();
+        $movies = Movie::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
 
 
-        return view('index')->with('movies', $movies);
+        return view('movies.index')->with('movies', $movies);
     }
 
     /**
@@ -27,7 +25,7 @@ class MovieController extends Controller
      */
     public function create()
     {
-         
+          
     }
 
     /**
@@ -39,6 +37,7 @@ class MovieController extends Controller
     public function store(Request $request)
     {
         $movie = Movie::create([
+            'user_id' => Auth::user()->id,
             'nameMovie' => $request->nameMovie,
             'director' => $request->director,
             'genre' => $request->genre,
@@ -60,9 +59,13 @@ class MovieController extends Controller
      */
     public function show($id)
     {
-        $movie = Movie::find($id);
+        $movie = Movie::where('user_id', Auth::user()->id)->first();
 
-        return view('show')->with('movie', $movie);
+        if (empty($movie)) {
+            return redirect()->back();
+        }else{
+            return view('movies.show')->with('movie', $movie);
+        }
     }
 
     /**
@@ -75,7 +78,7 @@ class MovieController extends Controller
     {
         $movie = Movie::find($id);
 
-        return view('edit')->with('movie', $movie);    
+        return view('movies.edit')->with('movie', $movie);    
     }
 
     /**

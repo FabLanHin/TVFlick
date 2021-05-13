@@ -10,7 +10,7 @@ class Serie extends Model
     use HasFactory;
 
     protected $fillable = [
-    	'nameSerie', 'seasonSerie', 'platform', 'genreSerie', 'actorsSerie', 'rateSerie', 'statusSerie', 'synopsisSerie', 
+    	'user_id', 'nameSerie', 'seasonSerie', 'platform', 'genreSerie', 'actorsSerie', 'rateSerie', 'statusSerie', 'synopsisSerie', 
     ];
 
 

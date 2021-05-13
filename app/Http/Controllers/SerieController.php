@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Models\Serie;
 use Illuminate\Http\Request;
 
 class SerieController extends Controller
 {
     
+
     public function index()
     {
-        $series = Serie::all();
+        $series = Serie::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
 
 
         return view('series.index')->with('series', $series);
@@ -24,6 +26,7 @@ class SerieController extends Controller
     public function store(Request $request)
     {
         $serie = Serie::create([
+            'user_id' => Auth::user()->id,
             'nameSerie' => $request->nameSerie,
             'seasonSerie' => $request->seasonSerie,
             'platform' => $request->platform,
@@ -40,9 +43,14 @@ class SerieController extends Controller
     
     public function show($id)
     {
-        $serie = Serie::find($id);
+        $serie = Serie::where('user_id', Auth::user()->id)->first();
 
-        return view('series.show')->with('serie', $serie);
+        if (empty($serie)) {
+            return redirect()->back();
+        }else{
+            return view('series.show')->with('serie', $serie);
+        }
+        
     }
 
     
