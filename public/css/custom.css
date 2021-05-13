@@ -1,4 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 body{
-	background-color: black;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.navcss{
+	background-color: #0F1E44;
+}
+
+.logoF{
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+	transition: 0.3s;
+}
+
+.logoF:hover{
+	color:#A16B92;
+}
+
+.navItem{
 	color:white;
+	transition: 0.3s;
+}
+
+.navItem:hover{
+	color:#A16B92;
+}
+
+.btnLanding{
+	background-color: white;
+	color:#0F1E44;
+	transition: 0.3s;
+	border-radius: 16px;
+}
+
+.btnLanding:hover{
+	color:#A16B92;
+}
+
+.container-image{
+	background-image: url("../img/Fondo1.png");
+    background-size: 100%;
+    height:100vh;
+}
+
+.textLanding{
+	color: white;
+}
+
+.btn-registro{
+	background-color: #A16B92;
+	color:white;
+	border-radius: 16px;
+	transition: 0.3s;
+}
+
+.btn-registro:hover{
+	color:#0F1E44;
+}
+
+.cardLogIn .card-header{
+	background-color: rgba(0,0,0,0);
+	font-size: 30px;
+	border-bottom: 1px solid rgba(255,255,255,1);
+}
+
+.cardLogIn{
+	border:0px;
+	background-color: rgba(0,0,0,0);
+	color:white;
+	font-weight: bold;
+}
+
+.btn-logIn{
+	background-color: #A16B92;
+	color:white;
+	border-radius: 16px;
+	transition: 0.3s;
+}
+
+.btn-logIn:hover{
+	color:#0F1E44;
+}
+
+.fondoLogIn{
+	background-image: url("../img/Fondo2.png");
+	background-size: 100%;
+    height:100vh;
+}
+
+.logInInput{
+	border-radius: 16px;
+}
+
+.fondoHome{
+	background-image: url("../img/Fondo3.png");
+	background-size: 130%;
+    height:100vh;
+}
+
+.recomendacionHome{
+	color:white;
+}
+
+.movieImg{
+	background-image: url("../img/Fondo4.png");
+	background-size: 130%;
+    height:100vh;
+}
+
+.titleSection{
+	color:white;
+	font-weight: bold;
+}
+
+.btn-add{
+	background-color: #49A1B3;
+	color:white;
+	border-radius: 16px;
+}
+
+.card-section{
+	background-color: rgba(255, 255, 255, .2);
+	color:white;
+	border:0px;
+}
+
+.card-section td, th{
+	color:white;
+	font-weight: bold;
+	border-color: #49A1B3;
+}
+
+.bg-secondary{
+	background-color: #7B3360 !important;
+	color:white;
+	font-size: 15px;
+}
+
+.bg-primary{
+	background-color: #BDE9D3 !important;
+	color:#494949;
+	font-size: 15px;
+}
+
+.bg-success{
+	background-color: #40D9D2 !important;
+	color:white;
+	font-size: 15px;
+}
+
+.tdButton{
+	width: 15px;
+}
+
+.btnAcciones{
+	background-color: white;
+	color:#49A1B3;
+	border-radius: 16px;
+	transition: 0.3s
+}
+
+.btnAcciones:hover{
+	color:#0F1E44;
+}
+
+.btnDelete{
+	background-color: #472649;
+	color:white;
+	border-radius: 16px;
+	transition: 0.3s
+}
+
+.btnDelete:hover{
+	background-color: #7B3360;
+	color: white;
+}
+
+.cardShow h4{
+	font-size: 35px;
+	font-weight:bold;
+}
+
+.cardShow p{
+	font-size: 20px;
+}
+
+.modal-title{
+	color:#49A1B3;
+	font-size: 30px;
+}
+
+.modal-body{
+	color:#454545;
+}
+
+.btnModal{
+	background-color: white;
+	color:#49A1B3;
+	border-color: #49A1B3;
+	border-radius: 16px;
+	transition: 0.3s;
+}
+
+.btnModal:hover{
+	color:#40D9D2;
+	border-color: #40D9D2;
 }
